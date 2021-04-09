@@ -1,5 +1,10 @@
 load("@bazel_skylib//:bzl_library.bzl", "bzl_library")
-load("//rust:rust.bzl", "error_format")
+load(
+    "//rust:defs.bzl",
+    "error_format",
+    "experimental_incremental_base",
+    "experimental_incremental_prefixes",
+)
 
 exports_files(["LICENSE"])
 
@@ -35,5 +40,18 @@ label_flag(
 alias(
     name = "rustfmt",
     actual = "//tools/rustfmt",
+    visibility = ["//visibility:public"],
+)
+
+# Optional incremental compilation - see docs/index.md
+experimental_incremental_base(
+    name = "experimental_incremental_base",
+    build_setting_default = "",
+    visibility = ["//visibility:public"],
+)
+
+experimental_incremental_prefixes(
+    name = "experimental_incremental_prefixes",
+    build_setting_default = "//,-//vendored//",
     visibility = ["//visibility:public"],
 )
