@@ -39,6 +39,7 @@ def _with_modified_crate_name_impl(ctx):
             name = crate_name,
             type = crate_type,
             root = crate_root,
+            version = "0.0.0",
             srcs = ctx.attr.src.files,
             deps = depset(deps),
             proc_macro_deps = depset([]),

@@ -56,6 +56,7 @@ EOF
             name = crate_name,
             type = crate_type,
             root = rs_file,
+            version = "0.0.0",
             srcs = depset([rs_file]),
             deps = depset(deps),
             proc_macro_deps = depset([]),
