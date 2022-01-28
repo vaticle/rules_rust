@@ -31,7 +31,6 @@ def _strip_crate_info_output(crate_info):
         name = crate_info.name,
         type = crate_info.type,
         root = crate_info.root,
-        version = crate_info.version,
         srcs = crate_info.srcs,
         deps = crate_info.deps,
         proc_macro_deps = crate_info.proc_macro_deps,
