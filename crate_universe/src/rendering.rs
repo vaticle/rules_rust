@@ -514,6 +514,7 @@ impl Renderer {
                 tags.insert("manual".to_owned());
                 tags.insert("noclippy".to_owned());
                 tags.insert("norustfmt".to_owned());
+                tags.insert(format!("crate-name={}", krate.name));
                 tags
             },
             version: krate.common_attrs.version.clone(),
